@@ -6,6 +6,9 @@ body{
     color:#00BFA6;
     background-color:#F3F4F6;
     margin:2rem;
+    display:flex;
+    flex-direction: column;
+    width: 65rem;
 }
 header{
     font-size: 2.5rem;
@@ -16,8 +19,13 @@ div{
 }
 
 button{
-    margin:0rem 0rem 1.5rem;
     border-radius: 0.5rem;
+    width:fit-content;
+}
+table{
+    padding: 0rem 0rem;
+    text-align: center;
+    margin:auto;
 }
 input{
     margin:0rem 0rem 1.5rem;

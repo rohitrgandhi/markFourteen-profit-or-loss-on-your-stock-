@@ -4,9 +4,7 @@ var qty=document.querySelector("#quantity");
 
 var cmp=document.querySelector("#currentmarketprice");
 
-var output1=document.querySelector("#output1");
-var output2=document.querySelector("#output2");
-var output3=document.querySelector("#output3");
+var output=document.querySelector("#output");
 
 var calculateButton=document.querySelector("#button");
 
@@ -14,28 +12,37 @@ var calculateButton=document.querySelector("#button");
 calculateButton.addEventListener("click", calculate);
 
 function calculate()
-{   
-    cmp=cmp.value;
-    buy=buy.value;
-    qty=qty.value;
+{  
+    buy=Number(buy.value);
+    cmp=Number(cmp.value);
+    qty=Number(qty.value);
+    var abs;
+    var percent;
     if(cmp>buy)
     {
         var profit=cmp-buy;
-        var abs=profit*qty;
-        var percent=(profit/buy)*100;
-        output2.innerText=abs;
-        output3.innerText=percent,"%";
-        output1.innerText="Hurray your are at a profit";
+        var totalProfit=profit*qty;
+        var profitPercentage=(profit/buy)*100;
+        outputMsg(`Hurray...Total Profit is Rs.${totalProfit} and the Profit Percentage is ${profitPercentage}%`)
+        
     }
-    else
+    else if(cmp<buy)
     {   
         var loss=buy-cmp;
-        var abs=(loss*qty);
-        var percent=(loss/buy)*100;
-        output2.innerText=abs;
-        output3.innerText=percent;
-        output1.innerText="You're at a loss";
+        abs=loss*qty;
+        percent=(loss/buy)*100;
+        outputMsg(`Unfortunately, Loss is Rs.${abs} and the percent is ${percent}%`)
+    }
+    else
+    {
+        var diff=buy-cmp;
+        var abs=diff*qty;
+        var percent=(diff/buy)*100;
+        outputMsg(`No Profit No Loss`)
     }
 }
 
 
+function outputMsg(message)
+{   output.innerHTML=message;
+}
