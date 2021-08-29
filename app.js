@@ -23,15 +23,16 @@ function calculate()
         var profit=cmp-buy;
         var totalProfit=profit*qty;
         var profitPercentage=(profit/buy)*100;
-        outputMsg(`Hurray...Total Profit is Rs.${totalProfit} and the Profit Percentage is ${profitPercentage}%`)
-        
+        output.style.color="green"; //bonus
+        outputMsg(`Hurray...Total Profit is Rs.${totalProfit} and the Profit Percentage is ${profitPercentage.toFixed(2)}%`)//bonus
     }
     else if(cmp<buy)
     {   
         var loss=buy-cmp;
         abs=loss*qty;
         percent=(loss/buy)*100;
-        outputMsg(`Unfortunately, Loss is Rs.${abs} and the percent is ${percent}%`)
+        output.style.color="red";//bonus
+        outputMsg(`Unfortunately, Loss is Rs.${abs} and the percent is ${percent.toFixed(2)}%`)//bonus
     }
     else
     {
