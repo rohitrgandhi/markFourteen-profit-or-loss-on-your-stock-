@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap');
+
+body{
+    font-family: 'Lato', sans-serif;
+    text-align: center;
+    color:#00BFA6;
+    background-color:#F3F4F6;
+    margin:5rem;
+}
+header{
+    font-size: 3rem;
+    margin: 5rem;
+}
+
+label{
+    margin:1rem;
+}
+
+button{
+    margin: 1rem;
+    border-radius: 0.5rem;
+}
+
+.output{
+    font-size: 2rem;
+}
+
+footer {
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #62DCD0;
+    border-radius: .5rem;
+  }
