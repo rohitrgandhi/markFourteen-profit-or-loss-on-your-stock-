@@ -1,37 +1,41 @@
 //taking variables from HTML world to Javascript world
-const dob=document.querySelector("#date-of-birth");
-const luckyNumber=document.querySelector("#lucky-number");
-const output=document.querySelector("#output");
-const checkButton=document.querySelector("#button");
+var buy=document.querySelector("#buy-price");
+var qty=document.querySelector("#quantity");
 
-//when button is clicked check function is called.
-checkButton.addEventListener("click", check);
+var cmp=document.querySelector("#currentmarketprice");
 
-function check()
-{
-    let birthDate=dob.value;
-    let sum=calculateSum(birthDate);
-    //this is where it checks for luck
-    if (sum%luckyNumber.value===0)
+var output1=document.querySelector("#output1");
+var output2=document.querySelector("#output2");
+var output3=document.querySelector("#output3");
+
+var calculateButton=document.querySelector("#button");
+
+//when button is clicked calculate function is called.
+calculateButton.addEventListener("click", calculate);
+
+function calculate()
+{   
+    cmp=cmp.value;
+    buy=buy.value;
+    qty=qty.value;
+    if(cmp>buy)
     {
-        output.innerText="Your Birthday is lucky";
+        var profit=cmp-buy;
+        var abs=profit*qty;
+        var percent=(profit/buy)*100;
+        output2.innerText=abs;
+        output3.innerText=percent,"%";
+        output1.innerText="Hurray your are at a profit";
     }
     else
-    {
-        output.innerText="You have to make your OWN luck";
+    {   
+        var loss=buy-cmp;
+        var abs=(loss*qty);
+        var percent=(loss/buy)*100;
+        output2.innerText=abs;
+        output3.innerText=percent;
+        output1.innerText="You're at a loss";
     }
 }
-function calculateSum(birthDate) //returns addition of digits
-{   
-    //this removes dashes to make it a string of numbers
-    birthDate=birthDate.replaceAll("-","");
 
-    // addition of numbers takes place here
-    let add=0;
-    for(let i=0;i<birthDate.length;i++)
-    {
-        add=add+Number(birthDate.charAt(i)); //birthDate is a string and cannot be added to add hence converted to a number.
-    }
-    return add;
-}
 
