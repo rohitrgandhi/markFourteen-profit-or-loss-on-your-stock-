@@ -12,13 +12,17 @@
 
 ### Step 1: Building the UI
 **Ex-01: Elements we need in our HTML**
+
 Challenge
+
 - Create 3 Inputs for Initial Price, Quantity, and the Current Price
 - Create 1 Button Tell me! for Getting the Profile / Loss Output.
 - Create a Div for Displaying the Output.
 
 **Ex-02: Adding id to Elements**
+
 Challenge
+
 - Add id="..." to different elements, so they can be later used in our js file.
 code (<input type='number' id='initial-price' placeholder='Add Initial Price Here...' />)
 
@@ -54,11 +58,13 @@ Formula
 - Loss Percentage = (Loss/CostPrice)*100
 
 Challenge
+
 Create a Function calculateProfitAndLoss to calculate Loss and Profit.
 Use Conditional Branching to check if Loss is to be calculated or Profit.
 Add console.log to check if the function is working properly.
 
 **Ex-06: Adding Event Listeners**
+
 To run the program, we need to add a click event listener to the Submit Button.
 submitBtn.addEventListener('click', submitHandler);
 
